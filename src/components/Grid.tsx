@@ -1,4 +1,4 @@
-import { useRef, PointerEvent as ReactPointerEvent } from 'react';
+import { useRef, type PointerEvent as ReactPointerEvent } from 'react';
 import './Grid.css';
 import { motion } from 'framer-motion';
 
