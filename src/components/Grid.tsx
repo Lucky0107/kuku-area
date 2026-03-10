@@ -9,6 +9,7 @@ interface GridProps {
 
 export function Grid({ selection, onSelectionChange }: GridProps) {
     const gridRef = useRef<HTMLDivElement>(null);
+    const lastHapticSelection = useRef({ width: 0, height: 0 });
     const rows = 10;
     const cols = 10;
 
@@ -36,11 +37,18 @@ export function Grid({ selection, onSelectionChange }: GridProps) {
         let col = Math.floor(x / cellWidth);
         let row = Math.floor(y / cellHeight);
 
-        // Clamp values to the grid bounds
-        col = Math.max(0, Math.min(cols - 1, col));
-        row = Math.max(0, Math.min(rows - 1, row));
+        const newWidth = col + 1;
+        const newHeight = row + 1;
 
-        onSelectionChange({ width: col + 1, height: row + 1 });
+        if (lastHapticSelection.current.width !== newWidth || lastHapticSelection.current.height !== newHeight) {
+            if (typeof navigator !== 'undefined' && navigator.vibrate) {
+                // Short, subtle vibration
+                navigator.vibrate(15);
+            }
+            lastHapticSelection.current = { width: newWidth, height: newHeight };
+        }
+
+        onSelectionChange({ width: newWidth, height: newHeight });
     };
 
     const handlePointerDown = (e: ReactPointerEvent) => {
