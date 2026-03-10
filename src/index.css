@@ -8,10 +8,13 @@
   --cell-hover: rgba(0, 0, 0, 0.06);
   --cell-border: rgba(0, 0, 0, 0.05);
 
-  /* Neon Accents */
-  --accent-1: #00e676;
-  --accent-2: #ff6d00;
-  --accent-3: #ffea00;
+  /* Cute Light Blue and Orange Accents */
+  --accent-1: #38bdf8;
+  /* Cute Sky Blue */
+  --accent-2: #fb923c;
+  /* Cute Orange */
+  --accent-3: #fcd34d;
+  /* Soft Yellow */
 
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   color-scheme: light;
