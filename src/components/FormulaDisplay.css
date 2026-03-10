@@ -1,0 +1,73 @@
+.formula-container {
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.formula-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.placeholder {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    opacity: 0.5;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.equation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 3.5rem;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+.number {
+    min-width: 2.5rem;
+    text-align: center;
+}
+
+.number.width {
+    color: var(--accent-1);
+}
+
+.number.height {
+    color: var(--accent-2);
+}
+
+.number.result {
+    color: var(--text-primary);
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    min-width: 4rem;
+}
+
+.operator {
+    color: var(--text-secondary);
+    font-size: 2.5rem;
+    font-weight: 600;
+    opacity: 0.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .equation {
+        font-size: 2.5rem;
+        gap: 0.5rem;
+    }
+
+    .operator {
+        font-size: 1.5rem;
+    }
+}
